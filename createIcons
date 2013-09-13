@@ -1,0 +1,23 @@
+#!/bin/bash
+f=$(pwd)
+
+if [ -z "${VAR}" ]; then
+	echo "Usage: ./createIcons <filename>";
+	exit 1;
+fi
+
+sips --resampleWidth 512 "${f}/${1}" --out "${f}/iTunesArtwork"
+sips --resampleWidth 1024 "${f}/${1}" --out "${f}/iTunesArtwork@2x"
+sips --resampleWidth 57 "${f}/${1}" --out "${f}/Icon.png"
+sips --resampleWidth 114 "${f}/${1}" --out "${f}/Icon@2x.png"
+sips --resampleWidth 72 "${f}/${1}" --out "${f}/Icon-72.png"
+sips --resampleWidth 144 "${f}/${1}" --out "${f}/Icon-72@2x.png"
+sips --resampleWidth 29 "${f}/${1}" --out "${f}/Icon-Small.png"
+sips --resampleWidth 58 "${f}/${1}" --out "${f}/Icon-Small@2x.png"
+sips --resampleWidth 50 "${f}/${1}" --out "${f}/Icon-Small-50.png"
+sips --resampleWidth 100 "${f}/${1}" --out "${f}/Icon-Small-50@2x.png"
+
+sips --resampleWidth 120 "${f}/${1}" --out "${f}/Icon7@2x.png"
+sips --resampleWidth 80 "${f}/${1}" --out "${f}/Icon-Small7@2x.png"
+
+
